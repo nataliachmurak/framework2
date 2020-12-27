@@ -31,11 +31,12 @@
             if (($lg = $fdt->fetch('login', '')) !== '')
             {
                 $page = $fdt->fetch('goto', '');
-               // $pw = $fdt->fetch('password', '');
-                //if ($pw == 'hej')
-                //{
+                $pw = $fdt->fetch('password', '');
+                if ($pw !== '')
+                {
                     $user = \Framework\Pages\UserLogin::eorl($lg); // use either a login name or the email address - see framework/pages/userlogin.php
-                    if (is_object($user) && $user->confirm)
+                    if (is_object($user))
+			/& && $user->confirm)*/
                         /*$user->pwok($pw) */ 
                     {
                         if (session_status() !== PHP_SESSION_ACTIVE)
@@ -47,7 +48,7 @@
                         /* NOT REACHED */
                     }
                }
-                $context->local()->message(\Framework\Local::MESSAGE, 'Please try again.');
+                $context->local()->message(\Framework\Local::MESSAGE, 'Please try again. :)');
                 return FALSE;
             }
             $context->local()->addval('goto', $context->formdata('get')->fetch('goto', ''));
