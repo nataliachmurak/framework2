@@ -50,8 +50,8 @@
                 $context->local()->message(\Framework\Local::MESSAGE, 'Please try again.');
                 return FALSE;
             }
-            $context->local()->addval('goto', $context->formdata('get')->fetch('goto', ''));
-            return TRUE;
+           // $context->local()->addval('goto', $context->formdata('get')->fetch('goto', ''));
+            //return TRUE;
         }
 /**
  * Handle a logout
