@@ -42,7 +42,7 @@
 
 {#
    If you want a <meta> Description tag set this
-{% set description = 'A PHP framework for building RESTfuk systems' %}
+{% set description = 'A PHP framework for building RESTful systems' %}
 #}
 
 {#
@@ -61,7 +61,7 @@
 #}
 
 {# this brings in some useful macros for making modals
-{% import '@util/modalmacro.twig' as f %}
+{% import '@util/modalmacro.twig' as m %}
 #}
 
 {% block meta %}
@@ -79,6 +79,16 @@
 {% block css %}
 {# <link> for any other CSS files you need #}
 {% endblock css %}
+
+{# If you want some inline CSS then put it in this block - no <style> tags - it is better NOT to use this though!!
+{% block style %}
+{% endblock style %}
+#}
+
+{# If you want to add critical CSS then put it in this block - no <style> tags
+{% block criticalCSS %}
+{% endblock criticalCSS %}
+#}
 
 {% block scripts %}
 {# <script src=""></script> for any other JS files you need #}
@@ -122,7 +132,7 @@
 {% block main %}
     <section class="row">
         <article class="ml-auto col-md-8 mr-auto">
-            <p class="text-center">Coming Soon</a>
+            <p class="text-center">Coming Soon</p>
         </article>
     </section>
 {% endblock main %}
