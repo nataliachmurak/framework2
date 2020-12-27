@@ -32,7 +32,7 @@
             {
                 $page = $fdt->fetch('goto', '');
                 $pw = $fdt->fetch('password', '');
-                if ($pw == 'hej')
+                if ($pw == '')
                 {
                     $user = \Framework\Pages\UserLogin::eorl($lg); // use either a login name or the email address - see framework/pages/userlogin.php
                     if (is_object($user) && $user->confirm)
