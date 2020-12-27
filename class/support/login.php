@@ -32,10 +32,11 @@
             {
                 $page = $fdt->fetch('goto', '');
                // $pw = $fdt->fetch('password', '');
-                //if ($pw !== '')
+               // if ($pw !== '')
                 //{
                     $user = \Framework\Pages\UserLogin::eorl($lg); // use either a login name or the email address - see framework/pages/userlogin.php
-                    if (is_object($user) && $user->pwok($pw) && $user->confirm)
+                    if (is_object($user) && $user->confirm)
+                        /*$user->pwok($pw) */ 
                     {
                         if (session_status() !== PHP_SESSION_ACTIVE)
                         { // no session started yet
@@ -45,7 +46,7 @@
                         $context->divert($page === '' ? '/' : $page); // success - divert to home page
                         /* NOT REACHED */
                     }
-               // }
+            //   }
                 $context->local()->message(\Framework\Local::MESSAGE, 'Please try again.');
                 return FALSE;
             }
